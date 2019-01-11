@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Project404</string>
+    <string name="welcome_screen">Welcome</string>
 </resources>
