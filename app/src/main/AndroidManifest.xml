@@ -16,7 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".customerhomepage"
+            android:label="@string/title_activity_customerhomepage" />
+        <activity android:name=".vegetables" />
+        <activity android:name=".fruits" />
+        <activity android:name=".dairy" />
+        <activity android:name=".meat"></activity>
     </application>
 
 </manifest>
