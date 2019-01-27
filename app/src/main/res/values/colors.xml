@@ -3,4 +3,14 @@
     <color name="colorPrimary">#4caf50</color>
     <color name="colorPrimaryDark">#2e7d32</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- 1st Gradient color -->
+    <color name="colorPurple_A400">#01a40e</color>
+    <color name="colorPurple_900">#fefffe</color>
+    <!-- ./ 1st Gradient color -->
+
+    <!-- 2nd Gradient color -->
+    <color name="colorAmber_A400">#fefffe</color>
+    <color name="colorAmber_900">#05a311</color>
+    <!-- ./ 2nd Gradient color -->
 </resources>
