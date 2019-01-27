@@ -24,8 +24,6 @@
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
         <activity android:name=".meat" />
-        <activity android:name=".customerlogin" />
-        <activity android:name=".customerlogin"></activity>
     </application>
 
 </manifest>
