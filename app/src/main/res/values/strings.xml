@@ -6,6 +6,7 @@
     <string name="title_activity_customer_menu">customerMenu</string>
     <string name="tab_text_1">PRODUCTS</string>
     <string name="tab_text_2">ANNOUNCEMENTS</string>
+    <string name="signup">Sign up</string>
     <string name="title_activity_customerhomepage">customerhomepage</string>
 
     <!-- TODO: Remove or change this placeholder text -->
