@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".summary" android:label="Summary"></activity>
+        <activity
+            android:name=".summary"
+            android:label="Summary" />
         <activity
             android:name=".Welcome_screen"
             android:label="@string/welcome_screen">
@@ -27,6 +29,7 @@
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
         <activity android:name=".meat" />
+        <activity android:name=".daily_update"></activity>
     </application>
 
 </manifest>
