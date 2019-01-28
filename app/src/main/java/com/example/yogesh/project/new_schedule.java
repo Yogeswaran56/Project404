@@ -25,7 +25,8 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
     private EditText editText_Cal, editText_startTime, editText_endTime, editText_District, editText_Place;
     private Button button_schedule, button_cancel;
     private int day, month, year, hours, mins, ampm;
-    private String ap;
+    private String selected_place, startTime, endTime, date, selected_town, st_ap, en_ap;
+    private int en_hours, en_mins, st_hours, st_mins;
     private Spinner district_select;
     
     @Override
@@ -78,8 +79,8 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
 
         if(v == editText_startTime) {
             final Calendar c = Calendar.getInstance();
-            hours = c.get(Calendar.HOUR_OF_DAY);
-            mins = c.get(Calendar.MINUTE);
+            st_hours = c.get(Calendar.HOUR_OF_DAY);
+            st_mins = c.get(Calendar.MINUTE);
             ampm = c.get(Calendar.AM_PM);
 
             TimePickerDialog tpd = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -87,22 +88,22 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                     if(ampm==1 && hourOfDay>12){
                         hourOfDay-=12;
-                        ap = "PM";
+                        st_ap = "PM";
                     }
                     else
-                        ap = "AM";
+                        st_ap = "AM";
                     String hourOfDayString = String.format("%02d",hourOfDay);
                     String minuteString = String.format("%02d",minute);
-                    editText_startTime.setText(hourOfDayString + ":" + minuteString + ap);
+                    editText_startTime.setText(hourOfDayString + ":" + minuteString + st_ap);
                 }
-            },hours,mins,false);
+            },st_hours,st_mins,false);
             tpd.show();
         }
 
         if(v == editText_endTime) {
             final Calendar c = Calendar.getInstance();
-            hours = c.get(Calendar.HOUR_OF_DAY);
-            mins = c.get(Calendar.MINUTE);
+            en_hours = c.get(Calendar.HOUR_OF_DAY);
+            en_mins = c.get(Calendar.MINUTE);
             ampm = c.get(Calendar.AM_PM);
 
             TimePickerDialog tpd = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -110,15 +111,15 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                     if(ampm==1 && hourOfDay>12){
                         hourOfDay-=12;
-                        ap = "PM";
+                        en_ap = "PM";
                     }
                     else
-                        ap = "AM";
+                        en_ap = "AM";
                     String hourOfDayString = String.format("%02d",hourOfDay);
                     String minuteString = String.format("%02d",minute);
-                    editText_endTime.setText(hourOfDayString + ":" + minuteString + ap);
+                    editText_endTime.setText(hourOfDayString + ":" + minuteString + en_ap);
                 }
-            },hours,mins,false);
+            },en_hours,en_mins,false);
             tpd.show();
         }
 
@@ -127,14 +128,19 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, schedule.class));
             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
         }
+
+        if(v == button_schedule) {
+            timeClass scheduleStTime = new timeClass(st_hours, st_mins, st_ap);
+            timeClass scheduleEnTime = new timeClass(en_hours, en_mins, en_ap);
+            dateClass scheduleDate = new dateClass(day, month, year);
+
+
+        }
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String selected_item = parent.getItemAtPosition(position).toString();
-        if(!selected_item.equals("Choose town:")) {
-            Toast.makeText(getApplicationContext(), selected_item, Toast.LENGTH_SHORT).show();
-        }
+        selected_town = parent.getItemAtPosition(position).toString();
     }
 
     @Override
