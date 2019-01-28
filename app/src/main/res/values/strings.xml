@@ -12,7 +12,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array id="d_names" name="district_names">
+    <string-array name="district_names" id="d_names">
         <item>Choose town name:</item>
         <item>Abiramam</item>
         <item>Achampudur</item>
