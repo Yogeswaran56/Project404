@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "520844321790",
+    "firebase_url": "https://found-404.firebaseio.com",
+    "project_id": "found-404",
+    "storage_bucket": "found-404.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520844321790:android:eccfcbed4edaade5",
+        "android_client_info": {
+          "package_name": "com.example.yogesh.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520844321790-cfa418fq92ck0luh4bj3f0cf1cfcl1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnSzepjw71-9aMh7m4ZrF8kwOkv7CsXsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
