@@ -63,7 +63,6 @@
                     android:drawablePadding="5dp"
                     />
 
-
                 <EditText
                     android:id="@+id/c_password"
                     android:layout_width="match_parent"
