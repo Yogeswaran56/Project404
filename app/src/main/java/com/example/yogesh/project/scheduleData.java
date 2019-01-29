@@ -7,7 +7,6 @@ public class scheduleData {
     private String placeOfLoc, town;
 
     public scheduleData() {
-
     }
 
     public scheduleData(dateClass scheduledDay, timeClass openTime, timeClass closeTime, String placeOfLoc, String town) {

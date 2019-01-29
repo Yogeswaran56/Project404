@@ -42,7 +42,6 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
             firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-
                 }
             });
         }

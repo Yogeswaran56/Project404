@@ -37,6 +37,7 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
         btn.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View v) {
         if(v == btn){
