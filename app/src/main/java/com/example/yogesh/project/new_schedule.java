@@ -18,6 +18,9 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.Calendar;
 
 public class new_schedule extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -28,6 +31,10 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
     private String selected_place, startTime, endTime, date, selected_town, st_ap, en_ap;
     private int en_hours, en_mins, st_hours, st_mins;
     private Spinner district_select;
+
+    private FirebaseAuth firebaseAuth;
+
+    private DatabaseReference databaseReferenceVendorID;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,9 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         district_select.setAdapter(arrayAdapter);
         district_select.setSelection(0);
+
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
         district_select.setOnItemSelectedListener(this);
@@ -133,6 +143,7 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
             timeClass scheduleStTime = new timeClass(st_hours, st_mins, st_ap);
             timeClass scheduleEnTime = new timeClass(en_hours, en_mins, en_ap);
             dateClass scheduleDate = new dateClass(day, month, year);
+
 
 
         }
