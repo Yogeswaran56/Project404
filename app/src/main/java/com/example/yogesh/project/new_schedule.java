@@ -3,6 +3,7 @@ package com.example.yogesh.project;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -18,8 +19,11 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -27,14 +31,19 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
     
     private EditText editText_Cal, editText_startTime, editText_endTime, editText_District, editText_Place;
     private Button button_schedule, button_cancel;
+
     private int day, month, year, hours, mins, ampm;
-    private String selected_place, startTime, endTime, date, selected_town, st_ap, en_ap;
     private int en_hours, en_mins, st_hours, st_mins;
+
+    private String selected_place, startTime, endTime, date, selected_town, st_ap, en_ap;
+
     private Spinner district_select;
+
+    private String vendorID;
 
     private FirebaseAuth firebaseAuth;
 
-    private DatabaseReference databaseReferenceVendorID;
+    private DatabaseReference databaseReferenceVendorID, vendorInformation, vendorSchedules, vendorOrders;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +67,12 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
 
 
         firebaseAuth = FirebaseAuth.getInstance();
+        vendorID = firebaseAuth.getCurrentUser().getUid();
+
+        databaseReferenceVendorID = FirebaseDatabase.getInstance().getReference("vendors").child(vendorID);
+        vendorInformation = databaseReferenceVendorID.child("information");
+        vendorSchedules = databaseReferenceVendorID.child("schedules");
+        vendorOrders = databaseReferenceVendorID.child("orders");
 
 
         district_select.setOnItemSelectedListener(this);
@@ -65,7 +80,24 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
         editText_startTime.setOnClickListener(this);
         editText_endTime.setOnClickListener(this);
         button_cancel.setOnClickListener(this);
+        button_schedule.setOnClickListener(this);
 
+    }
+
+    public void scheduleIt(scheduleData new_scheduledData) {
+        //Toast.makeText(this, "Schedule fn", Toast.LENGTH_SHORT).show();
+        String key = new_scheduledData.getKey();
+        vendorSchedules.child(key).setValue(new_scheduledData).addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "Scheduled the event", Toast.LENGTH_SHORT).show();
+                }
+                else if(task.isCanceled()) {
+                    Toast.makeText(getApplicationContext(), "Can't able to schedule, Try Again.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
@@ -144,7 +176,11 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
             timeClass scheduleEnTime = new timeClass(en_hours, en_mins, en_ap);
             dateClass scheduleDate = new dateClass(day, month, year);
 
+            String data_id = vendorSchedules.push().getKey();
 
+            scheduleData new_schedule = new scheduleData(scheduleDate, scheduleStTime, scheduleEnTime, selected_place, selected_town, data_id, vendorID);
+
+            scheduleIt(new_schedule);
 
         }
     }
