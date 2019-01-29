@@ -14,12 +14,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class customer_signup extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
-    private EditText editText_email,editText_password;
-    private String email,password;
+    private DatabaseReference databaseReferenceCustomerId;
+    private EditText editText_email,editText_password, editText_username, editText_phoneNumber;
+    private String email,password, username;
+    private long phNumber;
     private Button editText_btn;
 
     @Override
@@ -29,11 +33,24 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        editText_email = (EditText) findViewById(R.id.c_email_id);
-        editText_password = (EditText) findViewById(R.id.c_password);
-        editText_btn = (Button) findViewById(R.id.btn_signup);
+        editText_email = findViewById(R.id.c_email_id);
+        editText_password = findViewById(R.id.c_password);
+        editText_btn = findViewById(R.id.btn_signup);
+        editText_username = findViewById(R.id.c_username);
+        editText_phoneNumber = findViewById(R.id.c_phone_number);
 
         editText_btn.setOnClickListener(this);
+    }
+
+    public void customerInformationAdd() {
+        String userId = firebaseAuth.getCurrentUser().getUid();
+        databaseReferenceCustomerId = FirebaseDatabase.getInstance().getReference("customers").child(userId);
+
+        username = editText_username.getText().toString();
+        phNumber = Integer.parseInt(editText_phoneNumber.getText().toString());
+
+        personalInformation vendorInfo = new personalInformation(username, phNumber);
+        databaseReferenceCustomerId.setValue(vendorInfo);
     }
 
     @Override
@@ -59,6 +76,7 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+                        customerInformationAdd();
                         finish();
                         startActivity(new Intent(getApplicationContext(), customerhomepage.class));
                     }

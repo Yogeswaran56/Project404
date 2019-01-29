@@ -43,7 +43,7 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth firebaseAuth;
 
-    private DatabaseReference databaseReferenceVendorID, vendorInformation, vendorSchedules, vendorOrders;
+    private DatabaseReference databaseReferenceVendorID, vendorInformation, vendorSchedules, vendorOrders, databaseReferenceCustomerRef;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,8 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
         vendorID = firebaseAuth.getCurrentUser().getUid();
 
         databaseReferenceVendorID = FirebaseDatabase.getInstance().getReference("vendors").child(vendorID);
+        databaseReferenceCustomerRef = FirebaseDatabase.getInstance().getReference("customers").child("vendorSchedules");
+
         vendorInformation = databaseReferenceVendorID.child("information");
         vendorSchedules = databaseReferenceVendorID.child("schedules");
         vendorOrders = databaseReferenceVendorID.child("orders");
@@ -98,6 +100,11 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+        databaseReferenceCustomerRef.child(key).setValue(new_scheduledData);
+
+        finish();
+        startActivity(new Intent(this, schedule.class));
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 
     @Override
@@ -175,6 +182,7 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
             timeClass scheduleStTime = new timeClass(st_hours, st_mins, st_ap);
             timeClass scheduleEnTime = new timeClass(en_hours, en_mins, en_ap);
             dateClass scheduleDate = new dateClass(day, month, year);
+            selected_place = editText_Place.getText().toString();
 
             String data_id = vendorSchedules.push().getKey();
 

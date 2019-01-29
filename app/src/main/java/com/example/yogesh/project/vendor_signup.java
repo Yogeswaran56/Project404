@@ -1,6 +1,7 @@
 package com.example.yogesh.project;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,12 +15,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class vendor_signup extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
-    private EditText _username,_email,_password,_phno;
-    private String username,email,password,phno;
+    private DatabaseReference databaseReferenceVendorId;
+    private EditText editText_username,editText_email,editText_password,editText_phno;
+    private String username,email,password;
+    private long phno;
     private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +33,32 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        _username = (EditText) findViewById(R.id.v_username);
-        _email = (EditText) findViewById(R.id.v_email_id);
-        _password = (EditText) findViewById(R.id.v_password);
-        _phno = (EditText) findViewById(R.id.v_phone_number);
-        btn = (Button) findViewById(R.id.signup_btn);
+        editText_username = findViewById(R.id.v_username);
+        editText_email = findViewById(R.id.v_email_id);
+        editText_password = findViewById(R.id.v_password);
+        editText_phno = findViewById(R.id.v_phone_number);
+        btn = findViewById(R.id.signup_btn);
 
         btn.setOnClickListener(this);
+    }
+
+    public void vendorInformationAdd() {
+        String userId = firebaseAuth.getCurrentUser().getUid();
+        databaseReferenceVendorId = FirebaseDatabase.getInstance().getReference("vendors").child(userId);
+
+        username = editText_username.getText().toString();
+        phno = Integer.parseInt(editText_phno.getText().toString());
+
+        personalInformation vendorInfo = new personalInformation(username, phno);
+        databaseReferenceVendorId.setValue(vendorInfo);
     }
 
 
     @Override
     public void onClick(View v) {
         if(v == btn){
-            username = _username.getText().toString();
-            email = _email.getText().toString();
-            password = _password.getText().toString();
-            phno = _phno.getText().toString();
+            email = editText_email.getText().toString();
+            password = editText_password.getText().toString();
 
             if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
                 Toast.makeText(this, "E-mail ID and Password cannot be empty", Toast.LENGTH_SHORT).show();
@@ -63,6 +77,7 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+                        vendorInformationAdd();
                         finish();
                         startActivity(new Intent(getApplicationContext(), Welcome_screen.class));
                     }
