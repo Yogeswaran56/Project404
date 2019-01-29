@@ -32,7 +32,7 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
         _email = (EditText) findViewById(R.id.v_email_id);
         _password = (EditText) findViewById(R.id.v_password);
         _phno = (EditText) findViewById(R.id.v_phone_number);
-        btn = (Button) findViewById(R.id._btn);
+        btn = (Button) findViewById(R.id.signup_btn);
 
         btn.setOnClickListener(this);
     }
