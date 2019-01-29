@@ -18,9 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class vendor_login extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
-    private EditText _email,_password;
+    private EditText editText_email,editText_password;
     private String email,password;
-    private Button btn;
+    private Button button_login, button_signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +34,20 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(getApplicationContext(), Welcome_screen.class));
         }
 
+        editText_email = (EditText) findViewById(R.id.input_email);
+        editText_password = (EditText) findViewById(R.id.input_password);
+        button_login = (Button) findViewById(R.id.btn_login);
+        button_signup = findViewById(R.id.btn_signup);
 
-        _email = (EditText) findViewById(R.id.input_email);
-        _password = (EditText) findViewById(R.id.input_password);
-        btn = (Button) findViewById(R.id.btn_login);
-
-        btn.setOnClickListener(this);
+        button_login.setOnClickListener(this);
+        button_signup.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v==btn){
-            email = _email.getText().toString();
-            password = _password.getText().toString();
+        if(v==button_login){
+            email = editText_email.getText().toString();
+            password = editText_password.getText().toString();
 
             if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
                 Toast.makeText(this, "E-mail ID and Password cannot be empty", Toast.LENGTH_SHORT).show();
@@ -70,7 +71,11 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             });
+        }
 
+        if(v == button_signup) {
+            finish();
+            startActivity(new Intent(this, vendor_signup.class));
         }
     }
 }
