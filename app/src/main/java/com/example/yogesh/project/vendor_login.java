@@ -1,9 +1,7 @@
 package com.example.yogesh.project;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,10 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class customerlogin extends AppCompatActivity implements View.OnClickListener {
-
-     private ConstraintLayout constraintLayout;
-    private AnimationDrawable animationDrawable;
+public class vendor_login extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
     private EditText _email,_password;
@@ -30,22 +25,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btn = findViewById(R.id.btn_login);
-
-        getSupportActionBar().hide();
-
-        // init constraintLayout
-        constraintLayout = (ConstraintLayout) findViewById(R.id.constraintLayout);
-
-        // initializing animation drawable by getting background from constraint layout
-        animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-
-        // setting enter fade animation duration to 5 seconds
-        animationDrawable.setEnterFadeDuration(500);
-
-        // setting exit fade animation duration to 2 seconds
-        animationDrawable.setExitFadeDuration(500);
+        setContentView(R.layout.activity_vendor_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -60,25 +40,6 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         btn = (Button) findViewById(R.id.btn_login);
 
         btn.setOnClickListener(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (animationDrawable != null && !animationDrawable.isRunning()) {
-            // start the animation
-            animationDrawable.start();
-        }
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (animationDrawable != null && animationDrawable.isRunning()) {
-            // stop the animation
-            animationDrawable.stop();
-        }
     }
 
     @Override
@@ -105,10 +66,11 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         finish();
-                        startActivity(new Intent(getApplicationContext(), customerhomepage.class));
+                        startActivity(new Intent(getApplicationContext(), Welcome_screen.class));
                     }
                 }
             });
+
         }
     }
 }

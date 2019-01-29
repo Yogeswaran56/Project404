@@ -9,27 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".summary"
-            android:label="Summary" />
-        <activity
-            android:name=".Welcome_screen"
-            android:label="@string/welcome_screen">
+        <activity android:name=".schedule"></activity>
+        <activity android:name=".new_schedule"></activity>
+        <activity android:name=".vendor_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".vendor_signup"></activity>
+        <activity android:name=".customer_signup" />
         <activity
-            android:name=".customerhomepage"
-            android:label="@string/title_activity_customerhomepage" />
+            android:name=".summary"
+            android:label="Summary" />
+        <activity android:name=".Welcome_screen" android:label="@string/welcome_screen"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".customerhomepage" android:label="@string/title_activity_customerhomepage" />
         <activity android:name=".vegetables" />
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
         <activity android:name=".meat" />
-        <activity android:name=".daily_update"></activity>
+        <activity android:name=".daily_update" />
     </application>
 
 </manifest>
