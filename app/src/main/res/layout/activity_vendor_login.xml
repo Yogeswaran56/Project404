@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/constraintLayout"
     android:background="@drawable/drawable_gradient_animation_list"
-    tools:context=".customerlogin">
+    tools:context=".vendor_login">
 
 
 
