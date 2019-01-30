@@ -14,6 +14,7 @@
         <activity android:name=".vendor_login">
 
         </activity>
+        <activity android:name=".customerlogin" />
         <activity android:name=".vendor_signup" />
         <activity android:name=".customer_signup" />
         <activity
@@ -40,7 +41,8 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".announcementcard"></activity>
+        <activity android:name=".My_orders_screen" />
+        <activity android:name=".CustomListViewActivity"></activity>
     </application>
 
 </manifest>
