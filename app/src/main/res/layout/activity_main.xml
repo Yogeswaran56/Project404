@@ -14,13 +14,14 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:src="@drawable/shoppingCart"
+        android:src="@drawable/shoppingcart"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Digital Market"
         android:layout_gravity="center"
+        android:padding="10dp"
         android:textColor="#ed1212"
         android:textStyle="bold"
         android:textSize="50px" />

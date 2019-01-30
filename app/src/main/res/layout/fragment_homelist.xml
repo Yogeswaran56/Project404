@@ -30,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:id="@+id/vegecard"
                 android:clickable="true"
                 card_view:cardElevation="10dp"
                 card_view:cardCornerRadius="10dp">
@@ -65,6 +66,7 @@
                 android:layout_margin="10dp"
                 android:clickable="true"
                 card_view:cardElevation="10dp"
+                android:id="@+id/fruitscard"
                 card_view:cardCornerRadius="10dp">
 
                 <RelativeLayout

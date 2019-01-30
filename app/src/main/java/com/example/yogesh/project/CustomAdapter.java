@@ -15,7 +15,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class CustomAdapter extends ArrayAdapter<DataModel> implements View.OnClickListener{
+public class
+        CustomAdapter extends ArrayAdapter<DataModel> implements View.OnClickListener{
 
     private ArrayList<DataModel> dataSet;
     Context mContext;

@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/customer"
         android:layout_marginTop="180dp"
+        android:id="@+id/customer"
         android:background="@drawable/button"
         android:text="CUSTOMER"/>
     <Button

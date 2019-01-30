@@ -26,6 +26,8 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     private EditText _email,_password;
     private String email,password;
     private Button btn;
+    private Button signupbtn;
+    private Button loginsuccess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,23 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         btn = (Button) findViewById(R.id.btn_login);
 
         btn.setOnClickListener(this);
+        signupbtn=(Button)findViewById(R.id.signup);
+        signupbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(customerlogin.this,customer_signup.class);
+                startActivity(i);
+            }
+        });
+        loginsuccess=(Button)findViewById(R.id.btn_login);
+        loginsuccess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(customerlogin.this,customerhomepage.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override

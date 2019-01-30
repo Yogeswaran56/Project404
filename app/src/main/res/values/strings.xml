@@ -7,8 +7,9 @@
     <string name="title_activity_customer_menu">customerMenu</string>
     <string name="tab_text_1">PRODUCTS</string>
     <string name="tab_text_2">ANNOUNCEMENTS</string>
+    <string name="exit">EXIT</string>
     <string name="title_activity_customerhomepage">customerhomepage</string>
-
+    <string name="townname">No.15,AGS colony,Chromepet,Chennai</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -670,4 +671,11 @@
         <item>Viswanatham</item>
         <item>Walajabad</item>
     </string-array>
+    <string-array name="order_array">
+        <item>Tomato</item>
+        <item>Onion</item>
+        <item>Curd</item>
+        <item>Carrot</item>
+    </string-array>
+
 </resources>
