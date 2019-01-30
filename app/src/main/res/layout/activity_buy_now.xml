@@ -81,10 +81,10 @@
         android:layout_gravity="center"
         android:padding="60dp">
     <Button
+        android:id="@+id/buynow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/buynow"
         android:background="@drawable/button"
         android:text="BUY NOW"
         android:padding="20dp" />

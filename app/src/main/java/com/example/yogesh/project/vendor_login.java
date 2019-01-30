@@ -34,9 +34,9 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(getApplicationContext(), Welcome_screen.class));
         }
 
-        editText_email = (EditText) findViewById(R.id.input_email);
-        editText_password = (EditText) findViewById(R.id.input_password);
-        button_login = (Button) findViewById(R.id.btn_login);
+        editText_email = findViewById(R.id.input_email);
+        editText_password = findViewById(R.id.input_password);
+        button_login = findViewById(R.id.btn_login);
         button_signup = findViewById(R.id.btn_signup);
 
         button_login.setOnClickListener(this);

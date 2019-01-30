@@ -43,14 +43,19 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
     }
 
     public void vendorInformationAdd() {
-        String userId = firebaseAuth.getCurrentUser().getUid();
-        databaseReferenceVendorId = FirebaseDatabase.getInstance().getReference("vendors").child(userId);
+        try{
+            String userId = firebaseAuth.getCurrentUser().getUid();
+            databaseReferenceVendorId = FirebaseDatabase.getInstance().getReference("vendors").child(userId).child("information");
 
-        username = editText_username.getText().toString();
-        phno = Integer.parseInt(editText_phno.getText().toString());
+            username = editText_username.getText().toString();
+            phno = Long.parseLong(editText_phno.getText().toString());
 
-        personalInformation vendorInfo = new personalInformation(username, phno);
-        databaseReferenceVendorId.setValue(vendorInfo);
+            personalInformation vendorInfo = new personalInformation(username, phno);
+            databaseReferenceVendorId.setValue(vendorInfo);
+        }
+        catch (Exception e) {
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
     }
 
 
