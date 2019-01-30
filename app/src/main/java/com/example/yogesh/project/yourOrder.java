@@ -17,7 +17,7 @@ public class yourOrder extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_your_order);
 
         listView = (ListView) findViewById(R.id.sportsList);
 

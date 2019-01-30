@@ -12,11 +12,7 @@
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
         <activity android:name=".vendor_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".vendor_signup" />
         <activity android:name=".customer_signup" />
@@ -26,7 +22,13 @@
         <activity
             android:name=".Welcome_screen"
             android:label="@string/welcome_screen" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".customerhomepage"
             android:label="@string/title_activity_customerhomepage" />
