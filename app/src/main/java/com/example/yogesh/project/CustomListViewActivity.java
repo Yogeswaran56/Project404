@@ -1,5 +1,6 @@
 package com.example.yogesh.project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,7 +34,7 @@ public class CustomListViewActivity extends AppCompatActivity {
 
         dataModels= new ArrayList<>();
 
-        dataModels.add(new DataModel("Babu Manoharan", "DeMonte Colony", "23"));
+        dataModels.add(new DataModel("Manoharan", "DeMonte Colony", "23"));
         dataModels.add(new DataModel("Vendor1", "Chrompet", "24"));
         dataModels.add(new DataModel("Vendor Two", "Okiyempet", "30"));
         dataModels.add(new DataModel("Pratt","Oragadam","24"));
@@ -56,8 +57,10 @@ public class CustomListViewActivity extends AppCompatActivity {
 
                 DataModel dataModel= dataModels.get(position);
 
-                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getLocation()+" API: "+dataModel.getPrice(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
+//                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getLocation()+" API: "+dataModel.getPrice(), Snackbar.LENGTH_LONG)
+//                        .setAction("No action", null).show();
+                Intent i= new Intent(CustomListViewActivity.this,BuyNow.class);
+                startActivity(i);
             }
         });
 
