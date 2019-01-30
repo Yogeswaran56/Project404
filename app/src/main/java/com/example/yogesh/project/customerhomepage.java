@@ -146,9 +146,9 @@ public class customerhomepage extends Activity implements ActionBar.TabListener 
                 return rootView;
             }
             else {
-                View rootView = inflater.inflate(R.layout.fragment_customerhomepage, container, false);
-                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+                View rootView = inflater.inflate(R.layout.fragment_announcementcardview, container, false);
+//                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+//                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
                 return rootView;
             }
         }

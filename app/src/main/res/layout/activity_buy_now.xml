@@ -6,18 +6,28 @@
     android:layout_height="match_parent"
     android:background="@drawable/drawable_gradient_animation_list"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".BuyNow">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOMATO"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:paddingTop="150dp"
             android:text="Price per kg :"
             android:textSize="20dp" />
         <TextView
@@ -74,6 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:id="@+id/buynow"
         android:background="@drawable/button"
         android:text="BUY NOW"
         android:padding="20dp" />
