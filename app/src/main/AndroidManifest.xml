@@ -11,9 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".vendor_login">
-
-        </activity>
+        <activity android:name=".vendor_login"></activity>
         <activity android:name=".customerlogin" />
         <activity android:name=".vendor_signup" />
         <activity android:name=".customer_signup" />
@@ -23,7 +21,7 @@
         <activity
             android:name=".Welcome_screen"
             android:label="@string/welcome_screen" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +40,8 @@
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
         <activity android:name=".My_orders_screen" />
-        <activity android:name=".CustomListViewActivity"></activity>
+        <activity android:name=".CustomListViewActivity" />
+        <activity android:name=".custom_announcementList"></activity>
     </application>
 
 </manifest>
