@@ -18,8 +18,8 @@ public class BuyNow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(BuyNow.this,yourOrder.class);
-                startActivity(i);
+                //Intent i = new Intent(BuyNow.this,yourOrder.class);
+                //startActivity(i);
             }
         });
 

@@ -141,6 +141,8 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
                     }
                     else
                         st_ap = "AM";
+                    st_hours = hourOfDay;
+                    st_mins = minute;
                     String hourOfDayString = String.format("%02d",hourOfDay);
                     String minuteString = String.format("%02d",minute);
                     editText_startTime.setText(hourOfDayString + ":" + minuteString + st_ap);
@@ -164,6 +166,8 @@ public class new_schedule extends AppCompatActivity implements View.OnClickListe
                     }
                     else
                         en_ap = "AM";
+                    en_hours = hourOfDay;
+                    en_mins = minute;
                     String hourOfDayString = String.format("%02d",hourOfDay);
                     String minuteString = String.format("%02d",minute);
                     editText_endTime.setText(hourOfDayString + ":" + minuteString + en_ap);

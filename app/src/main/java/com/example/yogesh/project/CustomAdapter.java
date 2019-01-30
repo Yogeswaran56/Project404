@@ -57,10 +57,7 @@ public class
 
                 Snackbar.make(v, "You clicked image" , Snackbar.LENGTH_LONG)
                         .setAction("No action", null).show();
-
                 break;
-
-
         }
 
 
@@ -96,8 +93,8 @@ public class
             result=convertView;
         }
 
-        Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
-        result.startAnimation(animation);
+        //Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
+        //result.startAnimation(animation);
         lastPosition = position;
 
 

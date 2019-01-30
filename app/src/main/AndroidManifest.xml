@@ -38,7 +38,6 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".announcementcard"></activity>
     </application>
 
 </manifest>

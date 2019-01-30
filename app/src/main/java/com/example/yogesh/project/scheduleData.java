@@ -2,9 +2,9 @@ package com.example.yogesh.project;
 
 public class scheduleData {
 
-    private dateClass scheduledDay;
-    private timeClass openTime, closeTime;
-    private String placeOfLoc, town, key, vendorID;
+    public dateClass scheduledDay;
+    public timeClass openTime, closeTime;
+    public String placeOfLoc, town, key, vendorID;
 
     public scheduleData() {
     }
@@ -45,5 +45,33 @@ public class scheduleData {
 
     public String getVendorID() {
         return vendorID;
+    }
+
+    public void setScheduledDay(dateClass scheduledDay) {
+        this.scheduledDay = scheduledDay;
+    }
+
+    public void setOpenTime(timeClass openTime) {
+        this.openTime = openTime;
+    }
+
+    public void setCloseTime(timeClass closeTime) {
+        this.closeTime = closeTime;
+    }
+
+    public void setPlaceOfLoc(String placeOfLoc) {
+        this.placeOfLoc = placeOfLoc;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setVendorID(String vendorID) {
+        this.vendorID = vendorID;
     }
 }

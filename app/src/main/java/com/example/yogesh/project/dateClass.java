@@ -3,6 +3,10 @@ package com.example.yogesh.project;
 public class dateClass {
     private int day, month, year;
 
+    public dateClass() {
+
+    }
+
     public dateClass(int day, int month, int year) {
         this.day = day;
         this.month = month;
