@@ -21,7 +21,7 @@ public class classification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), customerlogin.class);
+                Intent i = new Intent(classification.this, customerlogin.class);
                 startActivity(i);
             }
         });
@@ -29,7 +29,7 @@ public class classification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), vendor_login.class);
+                Intent i = new Intent(classification.this, vendor_login.class);
                 startActivity(i);
             }
         });
