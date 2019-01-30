@@ -11,13 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".vendor_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".vendor_login" />
         <activity android:name=".vendor_signup" />
         <activity android:name=".customer_signup" />
         <activity
@@ -27,9 +21,6 @@
             android:name=".Welcome_screen"
             android:label="@string/welcome_screen" />
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".customerhomepage"
-            android:label="@string/title_activity_customerhomepage" />
         <activity android:name=".vegetables" />
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
@@ -38,6 +29,14 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
+        <activity android:name=".custo_home_page" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".homelist"></activity>
     </application>
 
 </manifest>

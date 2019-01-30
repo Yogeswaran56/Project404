@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,8 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
     private String email,password, username;
     private long phNumber;
     private Button editText_btn;
+    private Button createacc;
+    private TextView tvv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,22 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
         editText_phoneNumber = findViewById(R.id.c_phone_number);
 
         editText_btn.setOnClickListener(this);
+        createacc=(Button)findViewById(R.id.btn_sign);
+        createacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(customer_signup.this,custo_home_page.class);
+                startActivity(i);
+            }
+        });
+        tvv=(TextView)findViewById(R.id.tvv);
+        createacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(customer_signup.this,customerlogin.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void customerInformationAdd() {
@@ -78,7 +97,7 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
                     if(task.isSuccessful()){
                         customerInformationAdd();
                         finish();
-                        startActivity(new Intent(getApplicationContext(), customerhomepage.class));
+                        startActivity(new Intent(getApplicationContext(), custo_home_page.class));
                     }
                 }
             });

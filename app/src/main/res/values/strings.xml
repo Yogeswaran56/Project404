@@ -677,5 +677,8 @@
         <item>Curd</item>
         <item>Carrot</item>
     </string-array>
+    <string name="title_activity_customer_home_page">customer_home_page</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_activity_cust_home_page">cust_home_page</string>
 
 </resources>

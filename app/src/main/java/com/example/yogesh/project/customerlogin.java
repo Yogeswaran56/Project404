@@ -74,7 +74,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         loginsuccess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(customerlogin.this,customerhomepage.class);
+                Intent i= new Intent(customerlogin.this,custo_home_page.class);
                 startActivity(i);
             }
         });
@@ -124,7 +124,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         finish();
-                        startActivity(new Intent(getApplicationContext(), customerhomepage.class));
+                        startActivity(new Intent(getApplicationContext(), custo_home_page.class));
                     }
                 }
             });
