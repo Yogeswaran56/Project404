@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/drawable_gradient_animation_list"
     tools:context=".customer_signup">
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -83,6 +84,15 @@
                     android:padding="15dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account ? Click here to LOGIN"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
                     />
 
             </LinearLayout>
