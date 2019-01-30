@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class classification extends AppCompatActivity {
+
     private Button customer;
     private Button vendor;
 
@@ -15,24 +16,26 @@ public class classification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classification);
-        customer = (Button) findViewById(R.id.customer);
-        vendor = (Button) findViewById(R.id.vendor);
-        customer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        try {
+            customer = (Button) findViewById(R.id.customer);
+            vendor = (Button) findViewById(R.id.vendor);
+            customer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(classification.this, customerlogin.class);
+                    startActivity(i);
+                }
+            });
+            vendor.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                Intent i = new Intent(classification.this, customerlogin.class);
-                startActivity(i);
-            }
-        });
-        vendor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(classification.this, vendor_login.class);
-                startActivity(i);
-            }
-        });
+                    Intent i = new Intent(classification.this, vendor_login.class);
+                    startActivity(i);
+                }
+            });
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 }
-

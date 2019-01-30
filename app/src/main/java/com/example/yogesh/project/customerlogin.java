@@ -59,8 +59,8 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
 
         _email = (EditText) findViewById(R.id.input_email);
         _password = (EditText) findViewById(R.id.input_password);
-        btn = (Button) findViewById(R.id.btn_login);
 
+        btn = (Button) findViewById(R.id.btn_login);
         btn.setOnClickListener(this);
         signupbtn=(Button)findViewById(R.id.signup);
         signupbtn.setOnClickListener(new View.OnClickListener() {
