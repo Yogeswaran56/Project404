@@ -57,10 +57,7 @@ public class
 
                 Snackbar.make(v, "You clicked image" , Snackbar.LENGTH_LONG)
                         .setAction("No action", null).show();
-
                 break;
-
-
         }
 
 
