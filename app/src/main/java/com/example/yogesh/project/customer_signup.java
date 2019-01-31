@@ -51,7 +51,7 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
             }
         });
-        tvv=(TextView)findViewById(R.id.tvv);
+        tvv=(TextView)findViewById(R.id.tv_login);
         createacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
