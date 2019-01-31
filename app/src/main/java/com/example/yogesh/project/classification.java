@@ -37,6 +37,15 @@ public class classification extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+            vendor.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    Intent i = new Intent(classification.this, vendor_login.class);
+                    startActivity(i);
+                }
+            });
+
             
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();

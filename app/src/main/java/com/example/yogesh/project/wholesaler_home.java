@@ -14,7 +14,7 @@ public class wholesaler_home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wholesaler_home);
 
-        sellingprice=(Button)findViewById(R.id.selling_price);
+        sellingprice=(CardView) findViewById(R.id.selling_price);
         sellingprice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
