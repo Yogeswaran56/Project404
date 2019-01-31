@@ -10,6 +10,7 @@ public class wholesalerlogin extends AppCompatActivity {
 
     private Button signupbtn;
     private Button loginsuccess;
+    private Button login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
