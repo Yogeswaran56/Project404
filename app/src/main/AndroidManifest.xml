@@ -39,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".dashboard"/>
         <activity android:name=".vegetables" />
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
@@ -52,6 +53,11 @@
         <activity android:name=".homelist"></activity>
         <activity android:name=".My_orders_screen"/>
         <activity android:name=".custom_announcementList"/>
+        <activity android:name=".wholesaler_home"/>
+        <activity android:name=".wholesaler_signup"/>
+        <activity android:name=".wholesalerlogin"/>
+        
+
     </application>
 
 </manifest>

@@ -22,8 +22,6 @@ public class custom_list_view extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_list_view);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
 
         listView=(ListView)findViewById(R.id.list);
@@ -31,19 +29,19 @@ public class custom_list_view extends AppCompatActivity {
 
         dataModels= new ArrayList<>();
 
-        dataModels.add(new DataModel("Manoharan", "DeMonte Colony", "23"));
-        dataModels.add(new DataModel("Vendor1", "Chrompet", "24"));
-        dataModels.add(new DataModel("Vendor Two", "Okiyempet", "30"));
+        dataModels.add(new DataModel("Manoharan", "DeMonte Colony", "19"));
+        dataModels.add(new DataModel("Vendor1", "Chrompet", "19"));
+        dataModels.add(new DataModel("Vendor Two", "Okiyempet", "21"));
         dataModels.add(new DataModel("Pratt","Oragadam","24"));
-        dataModels.add(new DataModel("Elephant", "Nungambakkam", "25"));
-        dataModels.add(new DataModel("Vendor Five", "Saidapet", "28"));
+        dataModels.add(new DataModel("Elephant", "Nungambakkam", "26"));
+        dataModels.add(new DataModel("Vendor Five", "Saidapet", "26"));
         dataModels.add(new DataModel("Goutham", "Aavadi", "29"));
-        dataModels.add(new DataModel("Manoharan","Teynampet","19"));
-        dataModels.add(new DataModel("Inbam", "Besant Nagar", "34"));
-        dataModels.add(new DataModel("Vendor 9", "Ambikapuram", "26"));
-        dataModels.add(new DataModel("Sheero", "Raja Street", "19"));
-        dataModels.add(new DataModel("Lolita","AGS Colony","21"));
-        dataModels.add(new DataModel("Maari", "Kottivakkam", "23"));
+        dataModels.add(new DataModel("Manoharan","Teynampet","29"));
+        dataModels.add(new DataModel("Inbam", "Besant Nagar", "30"));
+        dataModels.add(new DataModel("Vendor 9", "Ambikapuram", "31"));
+        dataModels.add(new DataModel("Sheero", "Raja Street", "31"));
+        dataModels.add(new DataModel("Lolita","AGS Colony","32"));
+        dataModels.add(new DataModel("Maari", "Kottivakkam", "33"));
 
         adapter= new CustomAdapter(dataModels,getApplicationContext());
 
