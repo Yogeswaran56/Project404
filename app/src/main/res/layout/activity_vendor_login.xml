@@ -8,12 +8,6 @@
     android:background="@drawable/drawable_gradient_animation_list"
     tools:context=".vendor_login">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="VENDOR LOGIN"
-        />
 
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
