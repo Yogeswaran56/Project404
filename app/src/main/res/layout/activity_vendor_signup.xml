@@ -5,6 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".vendor_signup">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="VENDOR SIGN UP"
+        />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

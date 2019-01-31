@@ -14,10 +14,11 @@
         <activity android:name=".new_schedule" />
         <activity android:name=".vendor_login" >
         </activity>
-        <activity android:name=".customerlogin"/>
+        <activity android:name=".customerlogin"
         <activity android:name=".custom_list_view"/>
 
-        <activity android:name=".vendor_signup" />
+        <activity android:name=".vendor_signup"
+            />
         <activity android:name=".customer_signup" />
         <activity
             android:name=".summary"

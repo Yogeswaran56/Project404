@@ -7,6 +7,14 @@
     android:background="@drawable/drawable_gradient_animation_list"
     tools:context=".customer_signup">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="CUSTOMER SIGN UP"
+        />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
