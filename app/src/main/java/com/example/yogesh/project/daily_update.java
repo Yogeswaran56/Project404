@@ -79,8 +79,8 @@ public class daily_update extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    public void updateData(String newPrice, String newQuantity, String itemName, String nodeKEY) {
-        productClass temp = new productClass(itemName, newQuantity, newPrice, nodeKEY);
+    public void updateData(String newPrice, String quantity, String itemName, String nodeKEY) {
+        productClass temp = new productClass(itemName, quantity, newPrice, nodeKEY);
         databaseReferenceProducts.child(nodeKEY).setValue(temp).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -98,13 +98,14 @@ public class daily_update extends AppCompatActivity implements AdapterView.OnIte
 
         View mView = getLayoutInflater().inflate(R.layout.custom_daiilyupdateedit_alert,null);
         final EditText editText_editedPrice = mView.findViewById(R.id.edt_editedPrice);
-        final EditText editText_editedQuantity = mView.findViewById(R.id.edt_editedQuantity);
+        //final EditText editText_editedQuantity = mView.findViewById(R.id.edt_editedQuantity);
         Button btn_changeValues = mView.findViewById(R.id.btn_changeValues);
 
         editText_editedPrice.setText(clickedData.getPrice());
-        editText_editedQuantity.setText(clickedData.getQuantity());
+        //editText_editedQuantity.setText(clickedData.getQuantity());
         final String nodeKey = clickedData.getKey();
         final String itemName = clickedData.getItemName();
+        final String quantity = clickedData.getQuantity();
 
         mbuilder.setView(mView);
         final AlertDialog dialog = mbuilder.create();
@@ -114,8 +115,8 @@ public class daily_update extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
                 String editedPrice = editText_editedPrice.getText().toString();
-                String editedQuantity = editText_editedQuantity.getText().toString();
-                updateData(editedPrice,editedQuantity,itemName,nodeKey);
+                //String editedQuantity = editText_editedQuantity.getText().toString();
+                updateData(editedPrice,quantity,itemName,nodeKey);
                 dialog.dismiss();
             }
         });

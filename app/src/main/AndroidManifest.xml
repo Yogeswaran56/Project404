@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".add_products"></activity>
+        <activity android:name=".dashboard" android:label="DASHBOARD"></activity>
+        <activity
+            android:name=".add_products"
+            android:label="ADD PRODUCTS" />
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".vendor_login" >
+        <activity android:name=".vendor_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +39,8 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".custo_home_page" >
-        </activity>
-        <activity android:name=".homelist"></activity>
+        <activity android:name=".custo_home_page"></activity>
+        <activity android:name=".homelist" />
     </application>
 
 </manifest>
