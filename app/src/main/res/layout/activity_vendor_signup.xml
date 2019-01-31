@@ -63,6 +63,16 @@
                 android:drawablePadding="5dp"
                 />
 
+            <EditText
+                android:id="@+id/v_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Town/City"
+                android:drawablePadding="5dp"
+                android:inputType="text"
+                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:layout_marginTop="10dp"
+                />
 
             <EditText
                 android:id="@+id/v_password"
