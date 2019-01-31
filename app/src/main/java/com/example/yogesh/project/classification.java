@@ -13,6 +13,7 @@ public class classification extends AppCompatActivity {
 
     private Button customer;
     private Button vendor;
+    private Button wholesalers;
 
     private Button button_logout;
 
@@ -25,7 +26,7 @@ public class classification extends AppCompatActivity {
         try {
             customer = (Button) findViewById(R.id.customer);
             vendor = (Button) findViewById(R.id.vendor);
-
+            wholesalers = (Button) findViewById(R.id.wholesalers);
             customer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -42,6 +43,15 @@ public class classification extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+            wholesalers.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    Intent i = new Intent(classification.this, wholesalerlogin.class);
+                    startActivity(i);
+                }
+            });
+
 
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
