@@ -26,7 +26,6 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
     private String email,password, username;
     private long phNumber;
     private Button editText_btn;
-    private Button createacc;
     private TextView tvv;
 
     @Override
@@ -38,27 +37,13 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
 
         editText_email = findViewById(R.id.c_email_id);
         editText_password = findViewById(R.id.c_password);
-        editText_btn = findViewById(R.id.btn_signup);
+        editText_btn = findViewById(R.id.btn_sign);
         editText_username = findViewById(R.id.c_username);
         editText_phoneNumber = findViewById(R.id.c_phone_number);
 
         editText_btn.setOnClickListener(this);
-        createacc=(Button)findViewById(R.id.btn_sign);
-        createacc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(customer_signup.this,custo_home_page.class);
-                startActivity(i);
-            }
-        });
         tvv=(TextView)findViewById(R.id.tv_login);
-        createacc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(customer_signup.this,customerlogin.class);
-                startActivity(i);
-            }
-        });
+        tvv.setOnClickListener(this);
     }
 
     public void customerInformationAdd() {
@@ -101,6 +86,10 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
                     }
                 }
             });
+        }
+        if(v==tvv){
+            Intent i= new Intent(customer_signup.this,customerlogin.class);
+            startActivity(i);
         }
     }
 }

@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class CustomListView extends AppCompatActivity {
+public class custom_list_view extends AppCompatActivity {
 
 
     ArrayList<DataModel> dataModels;
@@ -21,7 +21,7 @@ public class CustomListView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customlistview);
+        setContentView(R.layout.activity_custom_list_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,7 +56,7 @@ public class CustomListView extends AppCompatActivity {
 
 //                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getLocation()+" API: "+dataModel.getPrice(), Snackbar.LENGTH_LONG)
 //                        .setAction("No action", null).show();
-                Intent i= new Intent(CustomListView.this,BuyNow.class);
+                Intent i= new Intent(custom_list_view.this,BuyNow.class);
                 startActivity(i);
             }
         });

@@ -17,7 +17,7 @@ public class vegetables extends AppCompatActivity {
         tomato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(vegetables.this,CustomListView.class);
+                Intent i= new Intent(vegetables.this,custom_list_view.class);
                 startActivity(i);
             }
         });

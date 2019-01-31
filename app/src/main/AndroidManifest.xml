@@ -39,8 +39,9 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".custo_home_page"></activity>
-        <activity android:name=".homelist" />
+        <activity android:name=".custo_home_page" >
+        </activity>
+        <activity android:name=".homelist"></activity>
     </application>
 
 </manifest>
