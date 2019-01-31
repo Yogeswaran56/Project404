@@ -57,7 +57,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
 
         if(firebaseAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(getApplicationContext(), Welcome_screen.class));
+            startActivity(new Intent(getApplicationContext(), custo_home_page.class));
         }
 
 
