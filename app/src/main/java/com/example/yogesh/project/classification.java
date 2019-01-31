@@ -17,12 +17,10 @@ public class classification extends AppCompatActivity {
 
     private Button button_logout;
 
-    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classification);
-        firebaseAuth = FirebaseAuth.getInstance();
         try {
             customer = (Button) findViewById(R.id.customer);
             vendor = (Button) findViewById(R.id.vendor);

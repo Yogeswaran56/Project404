@@ -28,8 +28,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth firebaseAuth;
     private EditText _email,_password;
     private String email,password;
-    private Button btn;
-    private Button signupbtn;
+    private Button btn, signupBtn;
     private Button loginsuccess;
 
     private ProgressDialog progressDialog;
@@ -39,6 +38,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_login);
         btn = findViewById(R.id.btn_login);
+        signupBtn = findViewById(R.id.btn_signup);
 
         getSupportActionBar().hide();
 
@@ -135,6 +135,11 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
             catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
+        }
+
+        if(v == signupBtn) {
+            finish();
+            startActivity(new Intent(this, customerlogin.class));
         }
     }
 }
