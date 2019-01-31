@@ -12,14 +12,20 @@
         <activity android:name=".add_products"></activity>
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".vendor_login" >
+        <activity android:name=".vendor_login"
+            android:label="VENDOR LOGIN"
+            >
         </activity>
         <activity android:name=".customerlogin"
+            android:label="CUSTOMER LOGIN"/>
         <activity android:name=".custom_list_view"/>
 
         <activity android:name=".vendor_signup"
+            android:label="VENDOR SIGNUP"
             />
-        <activity android:name=".customer_signup" />
+        <activity android:name=".customer_signup"
+            android:label="CUSTOMER SIGNUP"
+            />
         <activity
             android:name=".summary"
             android:label="Summary" />
