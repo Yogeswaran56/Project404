@@ -37,6 +37,7 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         cardView_orders = findViewById(R.id.card_orders);
         button_logout = findViewById(R.id.btn_logout);
 
+        cardView_dashboard.setOnClickListener(this);
         cardView_schedule.setOnClickListener(this);
         cardView_summary.setOnClickListener(this);
         cardView_orders.setOnClickListener(this);
@@ -57,8 +58,7 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         }
 
         if(v == cardView_dashboard) {
-            finish();
-            //startActivity(new Intent(this, schedule.class));
+            startActivity(new Intent(this, dashboard.class));
         }
 
         if(v == cardView_orders) {

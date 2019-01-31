@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,78 +10,112 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Large"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Select item:"
-            android:textStyle="bold"
-            android:layout_weight="0.3"/>
-        <Spinner
-            android:id="@+id/sp_itemName"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.7"
-            style="@style/Base.TextAppearance.AppCompat.Large">
-        </Spinner>
-    </LinearLayout>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="150dp"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimary"/>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter quantity in Kilos:"
-            android:layout_weight="0.2"/>
-        <EditText
-            android:id="@+id/edt_quantity"
-            android:layout_width="100dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Select item:"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/sp_itemName"
+                style="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_weight="0.8"/>
-        <TextView
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="Enter quantity in Kilos:" />
+
+            <EditText
+                android:id="@+id/edt_quantity"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="KG"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="Enter the price per KG:" />
+
+            <EditText
+                android:id="@+id/edt_price"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:paddingRight="5dp"
+                android:text="(in Rupees)"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_convey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="KG"
-            android:paddingRight="5dp"
-            android:textAlignment="center"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="OKAY"
+            android:textColor="#fff" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Enter the price per KG:"
-            android:layout_weight="0.2"/>
-        <EditText
-            android:id="@+id/edt_price"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="0.6"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(in Rupees)"
-            android:paddingRight="5dp"
-            android:textAlignment="center"
-            android:layout_weight="0.2"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_convey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Convey"
-        android:textColor="#fff"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
