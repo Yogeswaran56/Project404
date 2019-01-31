@@ -9,14 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".add_products"></activity>
+        <activity android:name=".add_products" />
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".vendor_login" >
-        </activity>
-        <activity android:name=".customerlogin"/>
-        <activity android:name=".custom_list_view"/>
-
+        <activity android:name=".vendor_login" />
+        <activity android:name=".customerlogin" />
+        <activity android:name=".custom_list_view" />
         <activity android:name=".vendor_signup" />
         <activity android:name=".customer_signup" />
         <activity
@@ -25,7 +23,7 @@
         <activity
             android:name=".Welcome_screen"
             android:label="@string/welcome_screen" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,11 +38,12 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".custo_home_page" >
-        </activity>
-        <activity android:name=".homelist"></activity>
-        <activity android:name=".My_orders_screen"/>
-        <activity android:name=".custom_announcementList"/>
+        <activity android:name=".custo_home_page" />
+        <activity android:name=".homelist" />
+        <activity android:name=".My_orders_screen" />
+        <activity android:name=".custom_announcementList" />
+        <activity android:name=".wholesaler_signup" />
+        <activity android:name=".wholesaler_home"></activity>
     </application>
 
 </manifest>
