@@ -29,7 +29,7 @@ public class wholesalerlogin extends AppCompatActivity {
         loginsuccess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(wholesalerlogin.this,wholesaler_signup.class);
+                Intent i= new Intent(wholesalerlogin.this,wholesaler_home.class);
                 startActivity(i);
             }
         });
