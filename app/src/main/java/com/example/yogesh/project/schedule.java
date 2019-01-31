@@ -38,7 +38,7 @@ public class schedule extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReferenceVendorSchedules4Customers, databaseReferenceVendorID, databaseReferenceVendorSchedules;
 
-    private List<MergedData> schedulesList = new ArrayList<>();
+    //private List<MergedData> schedulesList = new ArrayList<>();
     private List<scheduleData> schedules_List = new ArrayList<>();
 
     @Override

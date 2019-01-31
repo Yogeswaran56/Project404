@@ -53,8 +53,7 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         }
 
         if(v == cardView_addproducts) {
-            finish();
-            //startActivity(new Intent(this, schedule.class));
+                startActivity(new Intent(this, add_products.class));
         }
 
         if(v == cardView_dashboard) {
@@ -63,7 +62,6 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         }
 
         if(v == cardView_orders) {
-            finish();
             //startActivity(new Intent(this, schedule.class));
         }
 
@@ -73,8 +71,7 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         }
 
         if(v == cardView_update) {
-            finish();
-            //startActivity(new Intent(this, schedule.class));
+            startActivity(new Intent(this, daily_update.class));
         }
 
         if(v == button_logout) {

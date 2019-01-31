@@ -5,10 +5,12 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +28,7 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
     private String username,email,password;
     private long phno;
     private Button btn;
+    private TextView textView_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +40,11 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
         editText_email = findViewById(R.id.v_email_id);
         editText_password = findViewById(R.id.v_password);
         editText_phno = findViewById(R.id.v_phone_number);
+        textView_login = findViewById(R.id.tv_login);
         btn = findViewById(R.id.signup_btn);
 
         btn.setOnClickListener(this);
+        textView_login.setOnClickListener(this);
     }
 
     public void vendorInformationAdd() {
@@ -88,6 +93,11 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
                     }
                 }
             });
+        }
+
+        if(v == textView_login) {
+            finish();
+            startActivity(new Intent(this, vendor_login.class));
         }
     }
 }
