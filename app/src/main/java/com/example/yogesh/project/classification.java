@@ -37,11 +37,11 @@ public class classification extends AppCompatActivity {
                     startActivity(i);
                 }
             });
-            vendor.setOnClickListener(new View.OnClickListener() {
+            wholesalers.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     finish();
-                    Intent i = new Intent(classification.this, vendor_login.class);
+                    Intent i = new Intent(classification.this, wholesalerlogin.class);
                     startActivity(i);
                 }
             });
