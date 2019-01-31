@@ -29,7 +29,6 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     private EditText _email,_password;
     private String email,password;
     private Button btn, signupBtn;
-    private Button loginsuccess;
 
     private ProgressDialog progressDialog;
 
@@ -37,8 +36,6 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_login);
-        btn = findViewById(R.id.btn_login);
-        signupBtn = findViewById(R.id.btn_signup);
 
         getSupportActionBar().hide();
 
@@ -69,6 +66,9 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
 
         btn = (Button) findViewById(R.id.btn_login);
         btn.setOnClickListener(this);
+
+        signupBtn = findViewById(R.id.signupCustomer);
+        signupBtn.setOnClickListener(this);
 
     }
 
@@ -139,7 +139,7 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
 
         if(v == signupBtn) {
             finish();
-            startActivity(new Intent(this, customerlogin.class));
+            startActivity(new Intent(this, customer_signup.class));
         }
     }
 }
