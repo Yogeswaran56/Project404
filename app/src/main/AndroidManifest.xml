@@ -9,19 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dashboard" android:label="DASHBOARD"></activity>
-        <activity
-            android:name=".add_products"
-            android:label="ADD PRODUCTS" />
+        <activity android:name=".add_products"></activity>
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".vendor_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".vendor_login" >
         </activity>
+        <activity android:name=".customerlogin"/>
+        <activity android:name=".custom_list_view"/>
+
         <activity android:name=".vendor_signup" />
         <activity android:name=".customer_signup" />
         <activity
@@ -30,7 +25,13 @@
         <activity
             android:name=".Welcome_screen"
             android:label="@string/welcome_screen" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".vegetables" />
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
@@ -42,6 +43,8 @@
         <activity android:name=".custo_home_page" >
         </activity>
         <activity android:name=".homelist"></activity>
+        <activity android:name=".My_orders_screen"/>
+        <activity android:name=".custom_announcementList"/>
     </application>
 
 </manifest>
