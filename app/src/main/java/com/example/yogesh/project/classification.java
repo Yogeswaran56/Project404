@@ -11,6 +11,7 @@ public class classification extends AppCompatActivity {
 
     private Button customer;
     private Button vendor;
+    private Button wholesalers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class classification extends AppCompatActivity {
         try {
             customer = (Button) findViewById(R.id.customer);
             vendor = (Button) findViewById(R.id.vendor);
+            wholesalers = (Button) findViewById(R.id.wholesalers);
             customer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -35,6 +37,7 @@ public class classification extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+            
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
