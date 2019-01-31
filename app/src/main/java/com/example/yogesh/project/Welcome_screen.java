@@ -53,8 +53,7 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         }
 
         if(v == cardView_addproducts) {
-            finish();
-            //startActivity(new Intent(this, schedule.class));
+            startActivity(new Intent(this, add_products.class));
         }
 
         if(v == cardView_dashboard) {

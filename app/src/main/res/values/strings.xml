@@ -13,7 +13,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array name="district_names" id="d_names">
+    <string-array name="products">
+        <item>Click to select</item>
+        <item>Carrot</item>
+        <item>Potatoe</item>
+        <item>Tomato</item>
+        <item>Rice</item>
+        <item>Corn</item>
+        <item>Barley</item>
+    </string-array>
+
+    <string-array name="district_names">
         <item>Choose town name:</item>
         <item>Abiramam</item>
         <item>Achampudur</item>
