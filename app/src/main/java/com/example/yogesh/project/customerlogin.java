@@ -1,5 +1,6 @@
 package com.example.yogesh.project;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
@@ -10,12 +11,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class customerlogin extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +32,8 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     private Button signupbtn;
     private Button loginsuccess;
 
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,8 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         btn = findViewById(R.id.btn_login);
 
         getSupportActionBar().hide();
+
+        progressDialog = new ProgressDialog(this);
 
         // init constraintLayout
         constraintLayout = (ConstraintLayout) findViewById(R.id.constraintLayout);
@@ -57,27 +64,11 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         }
 
 
-        _email = (EditText) findViewById(R.id.input_email);
-        _password = (EditText) findViewById(R.id.input_password);
+        _email = (EditText) findViewById(R.id.tv_emailid_customer);
+        _password = (EditText) findViewById(R.id.tv_password_customer);
 
         btn = (Button) findViewById(R.id.btn_login);
         btn.setOnClickListener(this);
-        signupbtn=(Button)findViewById(R.id.signup);
-        signupbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(customerlogin.this,customer_signup.class);
-                startActivity(i);
-            }
-        });
-        loginsuccess=(Button)findViewById(R.id.btn_login);
-        loginsuccess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(customerlogin.this,custo_home_page.class);
-                startActivity(i);
-            }
-        });
 
     }
 
@@ -103,31 +94,47 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if(v==btn){
-            email = _email.getText().toString();
-            password = _password.getText().toString();
+            try{
+                email = _email.getText().toString();
+                password = _password.getText().toString();
 
-            if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
-                Toast.makeText(this, "E-mail ID and Password cannot be empty", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if(TextUtils.isEmpty(email)) {
-                Toast.makeText(this, "E-mail ID cannot be empty", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if(TextUtils.isEmpty(password)) {
-                Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        finish();
-                        startActivity(new Intent(getApplicationContext(), custo_home_page.class));
-                    }
+                if(TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
+                    Toast.makeText(this, "E-mail ID and Password cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-            });
+                if(TextUtils.isEmpty(email)) {
+                    Toast.makeText(this, "E-mail ID cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(password)) {
+                    Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressDialog.setMessage("Logging in...");
+                progressDialog.show();
+
+                firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
+                        if(task.isSuccessful()){
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), custo_home_page.class));
+                        }
+                        else if(task.getException() instanceof FirebaseAuthInvalidUserException) {
+                            Toast.makeText(customerlogin.this, "Username is not registered", Toast.LENGTH_SHORT).show();
+                        }
+
+                        else {
+                            Toast.makeText(customerlogin.this, "Username/Password is incorrect", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+            catch (Exception e) {
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

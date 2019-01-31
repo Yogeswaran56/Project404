@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/drawable_gradient_animation_list"
-    tools:context=".classification">
+    tools:context=".custo_home_page">
+
+    <Button
+        android:layout_gravity="right"
+        android:layout_margin="15dp"
+        android:id="@+id/btn_logout_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"/>
 
     <Button
         android:layout_width="match_parent"

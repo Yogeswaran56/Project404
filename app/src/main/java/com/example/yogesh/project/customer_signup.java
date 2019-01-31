@@ -1,5 +1,6 @@
 package com.example.yogesh.project;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +30,8 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
     private Button editText_btn;
     private TextView tvv;
 
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,8 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
         editText_btn = findViewById(R.id.btn_sign);
         editText_username = findViewById(R.id.c_username);
         editText_phoneNumber = findViewById(R.id.c_phone_number);
+
+        progressDialog = new ProgressDialog(this);
 
         editText_btn.setOnClickListener(this);
         tvv=(TextView)findViewById(R.id.tv_login);
@@ -76,13 +82,24 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
                 return;
             }
 
+            progressDialog.setMessage("Signing in...");
+            progressDialog.show();
+
             firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    progressDialog.dismiss();
                     if(task.isSuccessful()){
                         customerInformationAdd();
                         finish();
                         startActivity(new Intent(getApplicationContext(), custo_home_page.class));
+                    }
+                    else if(task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        Toast.makeText(getApplicationContext(), "Email id already exists", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),"Unable to register, try again", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

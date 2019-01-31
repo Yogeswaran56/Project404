@@ -1,5 +1,6 @@
 package com.example.yogesh.project;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class vendor_login extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +23,8 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
     private EditText editText_email,editText_password;
     private String email,password;
     private Button button_login, button_signup;
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
         editText_password = findViewById(R.id.input_password);
         button_login = findViewById(R.id.btn_login);
         button_signup = findViewById(R.id.btn_signup);
+
+        progressDialog = new ProgressDialog(this);
 
         button_login.setOnClickListener(this);
         button_signup.setOnClickListener(this);
@@ -61,10 +67,13 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
                 return;
             }
+            progressDialog.setMessage("Signing in...");
+            progressDialog.show();
 
             firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    progressDialog.dismiss();
                     if(task.isSuccessful()){
                         finish();
                         startActivity(new Intent(getApplicationContext(), Welcome_screen.class));
