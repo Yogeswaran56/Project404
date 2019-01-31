@@ -8,7 +8,6 @@
     android:background="@drawable/drawable_gradient_animation_list"
     tools:context=".customerlogin">
 
-
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

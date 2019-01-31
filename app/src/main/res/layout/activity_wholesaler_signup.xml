@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@drawable/drawable_gradient_animation_list"
-    tools:context=".customer_signup">
+    tools:context=".wholesaler_signup">
 
     <ScrollView
         android:layout_width="match_parent"
