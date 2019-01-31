@@ -32,4 +32,20 @@ public class productClass {
     public String getKey() {
         return key;
     }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

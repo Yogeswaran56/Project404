@@ -20,8 +20,8 @@ public class custo_home_page extends AppCompatActivity {
             prod.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(custo_home_page.this, homelist.class);
-                    startActivity(i);
+                    //Intent i = new Intent(custo_home_page.this, homelist.class);
+                    //startActivity(i);
                 }
             });
             announce.setOnClickListener(new View.OnClickListener() {
