@@ -22,6 +22,7 @@ public class classification extends AppCompatActivity {
             customer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    finish();
                     Intent i = new Intent(classification.this, customerlogin.class);
                     startActivity(i);
                 }
@@ -29,7 +30,7 @@ public class classification extends AppCompatActivity {
             vendor.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    finish();
                     Intent i = new Intent(classification.this, vendor_login.class);
                     startActivity(i);
                 }
