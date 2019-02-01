@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/button"
-        android:text="BUY NOW"
+        android:text="SUBSCRIBE"
         android:padding="20dp" />
     </LinearLayout>
 </LinearLayout>

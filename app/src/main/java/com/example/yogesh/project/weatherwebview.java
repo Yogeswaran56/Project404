@@ -16,6 +16,6 @@ public class weatherwebview extends AppCompatActivity {
         setContentView(R.layout.activity_weatherwebview);
 
         weatherview = (WebView)findViewById(R.id.weather);
-        weatherview.loadUrl("http://www.weatheronline.in");
+        weatherview.loadUrl("https://www.weatheronline.in/TamilNadu.htm");
     }
 }
