@@ -28,7 +28,7 @@ public class custom_list_view extends AppCompatActivity {
 
 
         dataModels= new ArrayList<>();
-
+/*
         dataModels.add(new DataModel("Manoharan", "DeMonte Colony", "19"));
         dataModels.add(new DataModel("Vendor1", "Chrompet", "19"));
         dataModels.add(new DataModel("Vendor Two", "Okiyempet", "21"));
@@ -42,6 +42,21 @@ public class custom_list_view extends AppCompatActivity {
         dataModels.add(new DataModel("Sheero", "Raja Street", "31"));
         dataModels.add(new DataModel("Lolita","AGS Colony","32"));
         dataModels.add(new DataModel("Maari", "Kottivakkam", "33"));
+*/
+
+        dataModels.add(new DataModel("Manoharan", 5, "19"));
+        dataModels.add(new DataModel("Vendor1", 4, "19"));
+        dataModels.add(new DataModel("Vendor Two", 5, "21"));
+        dataModels.add(new DataModel("Pratt",4,"24"));
+        dataModels.add(new DataModel("Elephant", 4, "26"));
+        dataModels.add(new DataModel("Vendor Five", 4, "26"));
+        dataModels.add(new DataModel("Goutham", 3, "29"));
+        dataModels.add(new DataModel("Manoharan",3,"29"));
+        dataModels.add(new DataModel("Inbam", 3, "30"));
+        dataModels.add(new DataModel("Vendor 9", 3, "31"));
+        dataModels.add(new DataModel("Sheero", 2, "31"));
+        dataModels.add(new DataModel("Lolita",2,"32"));
+        dataModels.add(new DataModel("Maari", 2, "33"));
 
         adapter= new CustomAdapter(dataModels,getApplicationContext());
 

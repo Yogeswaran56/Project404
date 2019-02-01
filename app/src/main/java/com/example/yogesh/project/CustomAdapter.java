@@ -11,12 +11,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class
-        CustomAdapter extends ArrayAdapter<DataModel> implements View.OnClickListener{
+public class CustomAdapter extends ArrayAdapter<DataModel> implements View.OnClickListener{
 
     private ArrayList<DataModel> dataSet;
     Context mContext;
@@ -24,7 +24,7 @@ public class
     // View lookup cache
     private static class ViewHolder {
         TextView txtName;
-        TextView txtLocation;
+        RatingBar txtRating;
         TextView txtPrice;
         ImageView info;
     }
@@ -81,7 +81,7 @@ public class
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.row_item, parent, false);
             viewHolder.txtName = (TextView) convertView.findViewById(R.id.name);
-            viewHolder.txtLocation = (TextView) convertView.findViewById(R.id.location);
+            viewHolder.txtRating = (RatingBar) convertView.findViewById(R.id.rating);
             viewHolder.txtPrice = (TextView) convertView.findViewById(R.id.price);
             viewHolder.info = (ImageView) convertView.findViewById(R.id.item_info);
 
@@ -99,7 +99,7 @@ public class
 
 
         viewHolder.txtName.setText(dataModel.getName());
-        viewHolder.txtLocation.setText(dataModel.getLocation());
+        viewHolder.txtRating.setNumStars(dataModel.getRating());
         viewHolder.txtPrice.setText(dataModel.getPrice());
         viewHolder.info.setOnClickListener(this);
         viewHolder.info.setTag(position);

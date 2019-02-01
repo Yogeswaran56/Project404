@@ -3,14 +3,14 @@ package com.example.yogesh.project;
 public class DataModel {
 
     String name;
-    String location;
+    int rating;
     String price;
     // String feature;
 
 
-    public DataModel(String name, String location, String price ) {
+    public DataModel(String name, int rating, String price ) {
         this.name=name;
-        this.location=location;
+        this.rating=rating;
         this.price=price;
         //     this.feature=feature;
 
@@ -22,8 +22,8 @@ public class DataModel {
     }
 
 
-    public String getLocation() {
-        return location;
+    public int getRating() {
+        return rating;
     }
 
 
