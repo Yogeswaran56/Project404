@@ -34,13 +34,5 @@
         android:text="WHOLESALERS"/>-->
         android:text="WHOLESALERS"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:id="@+id/w"
-        android:background="@drawable/button"
-        android:text="WEB VIEW"/>
 
 </LinearLayout>
