@@ -99,7 +99,7 @@ public class CustomAdapter extends ArrayAdapter<DataModel> implements View.OnCli
 
 
         viewHolder.txtName.setText(dataModel.getName());
-        viewHolder.txtRating.setNumStars(dataModel.getRating());
+        viewHolder.txtRating.setRating(dataModel.getRating());
         viewHolder.txtPrice.setText(dataModel.getPrice());
         viewHolder.info.setOnClickListener(this);
         viewHolder.info.setTag(position);
