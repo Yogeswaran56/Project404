@@ -17,6 +17,9 @@ public class classification extends AppCompatActivity {
 
     private Button button_logout;
 
+    FirebaseAuth firebaseAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +28,34 @@ public class classification extends AppCompatActivity {
             customer = (Button) findViewById(R.id.customer);
             vendor = (Button) findViewById(R.id.vendor);
             wholesalers = (Button) findViewById(R.id.wholesalers);
+
+            firebaseAuth = FirebaseAuth.getInstance();
             customer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(classification.this, customerlogin.class);
-                    startActivity(i);
+                    if(firebaseAuth.getCurrentUser() == null) {
+                        Intent i = new Intent(classification.this, customerlogin.class);
+                        startActivity(i);
+                    }
+                    else
+                    {
+                        Intent i = new Intent(classification.this, custo_home_page.class);
+                        startActivity(i);
+                    }
                 }
             });
             vendor.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(classification.this, vendor_login.class);
-                    startActivity(i);
+                    if(firebaseAuth.getCurrentUser() == null) {
+                        Intent i = new Intent(classification.this, vendor_login.class);
+                        startActivity(i);
+                    }
+                    else
+                    {
+                        Intent i = new Intent(classification.this, Welcome_screen.class);
+                        startActivity(i);
+                    }
                 }
             });
             wholesalers.setOnClickListener(new View.OnClickListener() {

@@ -8,9 +8,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/tv_scheduleName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Schedule"
+            android:text=""
             android:textStyle="bold"
             style="@style/Base.TextAppearance.AppCompat.Large"/>
         <LinearLayout

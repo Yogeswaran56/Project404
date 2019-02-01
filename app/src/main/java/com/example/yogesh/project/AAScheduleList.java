@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 public class AAScheduleList extends ArrayAdapter<scheduleData> {
@@ -30,6 +33,7 @@ public class AAScheduleList extends ArrayAdapter<scheduleData> {
         TextView textView_closeTime = listItems.findViewById(R.id.tv_closetime);
         TextView textView_town = listItems.findViewById(R.id.tv_town);
         TextView textView_place = listItems.findViewById(R.id.tv_place);
+        TextView textView_schName = listItems.findViewById(R.id.tv_scheduleName);
 
         scheduleData data = scheduleList.get(position);
 

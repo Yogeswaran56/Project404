@@ -40,15 +40,21 @@ public class custo_home_page extends AppCompatActivity {
             prod.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(custo_home_page.this, homelist.class);
-                    startActivity(i);
+                    try{
+                        finish();
+                        Intent i = new Intent(custo_home_page.this, homelist.class);
+                        startActivity(i);
+                    }
+                    catch (Exception e) {
+                        Toast.makeText(custo_home_page.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
             announce.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    Intent i = new Intent(custo_home_page.this, custom_announcementList.class);
+                    finish();
+                    Intent i = new Intent(getApplicationContext(), custom_announcementList.class);
                     startActivity(i);
                 }
             });

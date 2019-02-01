@@ -57,7 +57,7 @@ public class customer_signup extends AppCompatActivity implements View.OnClickLi
         databaseReferenceCustomerId = FirebaseDatabase.getInstance().getReference("customers").child(userId);
 
         username = editText_username.getText().toString();
-        phNumber = Integer.parseInt(editText_phoneNumber.getText().toString());
+        phNumber = Long.parseLong(editText_phoneNumber.getText().toString());
 
         personalInformation vendorInfo = new personalInformation(username, phNumber);
         databaseReferenceCustomerId.setValue(vendorInfo);
