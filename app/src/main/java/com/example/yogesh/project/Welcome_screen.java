@@ -16,6 +16,7 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth firebaseAuth;
     private CardView cardView_schedule, cardView_summary, cardView_update, cardView_orders, cardView_addproducts, cardView_dashboard;
     private Button button_logout;
+    private CardView card_market,card_weather;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         cardView_addproducts = findViewById(R.id.card_products);
         cardView_dashboard = findViewById(R.id.card_dashboard);
         cardView_orders = findViewById(R.id.card_orders);
+        card_market = findViewById(R.id.card_marketview);
+        card_weather = findViewById(R.id.card_weather);
         button_logout = findViewById(R.id.btn_logout);
 
         cardView_dashboard.setOnClickListener(this);
@@ -44,6 +47,8 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         cardView_addproducts.setOnClickListener(this);
         cardView_update.setOnClickListener(this);
         cardView_summary.setOnClickListener(this);
+        card_market.setOnClickListener(this);
+        card_weather.setOnClickListener(this);
         button_logout.setOnClickListener(this);
     }
 
@@ -72,6 +77,14 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
 
         if(v == cardView_update) {
             startActivity(new Intent(this, daily_update.class));
+        }
+
+        if(v == card_market) {
+            startActivity(new Intent(this, marketWebView.class));
+        }
+
+        if(v == card_weather) {
+            startActivity(new Intent(this, weatherwebview.class));
         }
 
         if(v == button_logout) {
