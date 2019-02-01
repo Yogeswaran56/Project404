@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:drawableRight="@drawable/ic_email_black_24dp"
-                    android:hint="Type your email id here"
+                    android:hint="E-mail ID"
                     />
 
             </android.support.design.widget.TextInputLayout>

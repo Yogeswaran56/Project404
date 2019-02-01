@@ -83,7 +83,6 @@ public class vendor_login extends AppCompatActivity implements View.OnClickListe
         }
 
         if(v == button_signup) {
-            finish();
             startActivity(new Intent(this, vendor_signup.class));
         }
     }

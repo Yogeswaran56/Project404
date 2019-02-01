@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="235dp"
         android:id="@+id/customer"
         android:background="@drawable/button"
         android:text="CUSTOMER"/>
@@ -24,13 +24,14 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:text="VENDOR"/>
-    <Button
+    <!--<Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/wholesalers"
         android:background="@drawable/button"
+        android:text="WHOLESALERS"/>-->
         android:text="WHOLESALERS"/>
 
     <Button

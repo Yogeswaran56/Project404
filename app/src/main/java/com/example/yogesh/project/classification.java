@@ -27,7 +27,7 @@ public class classification extends AppCompatActivity {
         try {
             customer = (Button) findViewById(R.id.customer);
             vendor = (Button) findViewById(R.id.vendor);
-            wholesalers = (Button) findViewById(R.id.wholesalers);
+            //wholesalers = (Button) findViewById(R.id.wholesalers);
 
             firebaseAuth = FirebaseAuth.getInstance();
             customer.setOnClickListener(new View.OnClickListener() {
@@ -58,13 +58,13 @@ public class classification extends AppCompatActivity {
                     }
                 }
             });
-            wholesalers.setOnClickListener(new View.OnClickListener() {
+            /*wholesalers.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(classification.this, wholesalerlogin.class);
                     startActivity(i);
                 }
-            });
+            });*/
 
 
         } catch (Exception e) {

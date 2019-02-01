@@ -138,7 +138,6 @@ public class customerlogin extends AppCompatActivity implements View.OnClickList
         }
 
         if(v == signupBtn) {
-            finish();
             startActivity(new Intent(this, customer_signup.class));
         }
     }

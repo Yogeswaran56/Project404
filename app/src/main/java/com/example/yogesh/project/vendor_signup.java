@@ -114,7 +114,6 @@ public class vendor_signup extends AppCompatActivity implements View.OnClickList
         }
 
         if(v == textView_login) {
-            finish();
             startActivity(new Intent(this, vendor_login.class));
         }
     }

@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class custo_home_page extends AppCompatActivity {
+public class custo_home_page extends AppCompatActivity implements  View.OnClickListener{
     private Button prod;
     private Button announce, button_logout;
 
@@ -37,29 +37,42 @@ public class custo_home_page extends AppCompatActivity {
                     }
                 }
             });
-            prod.setOnClickListener(new View.OnClickListener() {
+            prod.setOnClickListener(this);
+            /*prod.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    try{
-                        finish();
+                    try {
                         Intent i = new Intent(custo_home_page.this, homelist.class);
                         startActivity(i);
                     }
-                    catch (Exception e) {
-                        Toast.makeText(custo_home_page.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    catch(Exception e){
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 }
-            });
+            });*/
             announce.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
-                    Intent i = new Intent(getApplicationContext(), custom_announcementList.class);
+
+                    Intent i = new Intent(custo_home_page.this, custom_announcementList.class);
                     startActivity(i);
                 }
             });
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v==prod){
+            try {
+                Intent i = new Intent(custo_home_page.this, homelist.class);
+                startActivity(i);
+            }
+            catch(Exception e){
+                Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

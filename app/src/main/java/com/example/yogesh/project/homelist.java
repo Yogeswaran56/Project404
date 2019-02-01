@@ -14,7 +14,7 @@ public class homelist extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_homelist);
         veg = findViewById(R.id.vegecard);
 
-        veg.setOnClickListener((View.OnClickListener) this);
+        veg.setOnClickListener(this);
     }
 
     @Override
