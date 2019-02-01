@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".summary"
+            android:label="@string/title_activity_summary"></activity>
+        <activity android:name=".new_transport" />
+        <activity android:name=".transport" />
         <activity android:name=".add_products" />
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
@@ -26,11 +31,8 @@
             android:name=".customer_signup"
             android:label="CUSTOMER SIGNUP" />
         <activity
-            android:name=".summary"
-            android:label="Summary" />
-        <activity
             android:name=".Welcome_screen"
-            android:label="@string/welcome_screen"></activity>
+            android:label="@string/welcome_screen" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,11 +48,13 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".custo_home_page" >
-        </activity>
-        <activity android:name=".homelist"></activity>
-        <activity android:name=".My_orders_screen"/>
-        <activity android:name=".custom_announcementList"/>
+        <activity android:name=".custo_home_page" />
+        <activity android:name=".homelist" />
+        <activity android:name=".My_orders_screen" />
+        <activity android:name=".custom_announcementList" />
+        <activity android:name=".marketWebView" />
+        <activity android:name=".weatherwebview" />
+        <activity android:name=".dashboard" />
     </application>
 
 </manifest>

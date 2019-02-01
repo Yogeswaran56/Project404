@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_scheduleName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            style="@style/Base.TextAppearance.AppCompat.Large"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Starting Time:"
+                android:layout_weight="0.2"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tv_st_time"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="TextView"
+                android:textSize="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Reaching Time:"
+                android:layout_weight="0.2"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tv_reach_time"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="TextView"
+                android:textSize="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="Source:"/>
+            <TextView
+                android:id="@+id/tv_srcPlace"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_weight="0.8"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="Destination:"/>
+            <TextView
+                android:id="@+id/tv_destPlace"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_weight="0.8" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="Event Date:"/>
+            <TextView
+                android:id="@+id/tv_comingDate"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_weight="0.8"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

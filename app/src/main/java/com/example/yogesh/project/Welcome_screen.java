@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Welcome_screen extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
-    private CardView cardView_schedule, cardView_summary, cardView_update, cardView_orders, cardView_addproducts, cardView_dashboard;
+    private CardView cardView_schedule, cardView_summary, cardView_update, cardView_orders, cardView_addproducts, cardView_dashboard, cardView_transport;
     private Button button_logout;
     private CardView card_market,card_weather;
 
@@ -39,7 +39,9 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         card_market = findViewById(R.id.card_marketview);
         card_weather = findViewById(R.id.card_weather);
         button_logout = findViewById(R.id.btn_logout);
+        cardView_transport = findViewById(R.id.card_transport);
 
+        cardView_transport.setOnClickListener(this);
         cardView_dashboard.setOnClickListener(this);
         cardView_schedule.setOnClickListener(this);
         cardView_summary.setOnClickListener(this);
@@ -71,7 +73,6 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
         }
 
         if(v == cardView_summary) {
-            finish();
             //startActivity(new Intent(this, schedule.class));
         }
 
@@ -85,6 +86,10 @@ public class Welcome_screen extends AppCompatActivity implements View.OnClickLis
 
         if(v == card_weather) {
             startActivity(new Intent(this, weatherwebview.class));
+        }
+
+        if(v == cardView_transport) {
+            startActivity(new Intent(this, transport.class));
         }
 
         if(v == button_logout) {
