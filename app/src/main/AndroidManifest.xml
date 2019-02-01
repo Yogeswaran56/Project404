@@ -9,12 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".tabsresult"
+            android:label="@string/title_activity_tabsresult"></activity>
+        <activity android:name=".ratingOrder" />
+        <activity android:name=".OrderListView" />
         <activity android:name=".add_products" />
         <activity android:name=".schedule" />
         <activity android:name=".new_schedule" />
-        <activity android:name=".wholesaler_signup"/>
-        <activity android:name=".wholesalerlogin"/>
-        <activity android:name=".wholesaler_home"/>
+        <activity android:name=".wholesaler_signup" />
+        <activity android:name=".wholesalerlogin" />
+        <activity android:name=".wholesaler_home" />
         <activity
             android:name=".vendor_login"
             android:label="VENDOR LOGIN" />
@@ -33,14 +38,8 @@
             android:label="Summary" />
         <activity
             android:name=".Welcome_screen"
-            android:label="@string/welcome_screen"></activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/welcome_screen" />
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".vegetables" />
         <activity android:name=".fruits" />
         <activity android:name=".dairy" />
@@ -49,14 +48,19 @@
         <activity android:name=".classification" />
         <activity android:name=".BuyNow" />
         <activity android:name=".yourOrder" />
-        <activity android:name=".custo_home_page" >
+        <activity android:name=".custo_home_page">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".homelist"></activity>
-        <activity android:name=".My_orders_screen"/>
-        <activity android:name=".custom_announcementList"/>
-        <activity android:name=".marketWebView"/>
-        <activity android:name=".weatherwebview"/>
-        <activity android:name=".dashboard"/>
+        <activity android:name=".homelist" />
+        <activity android:name=".My_orders_screen" />
+        <activity android:name=".custom_announcementList" />
+        <activity android:name=".marketWebView" />
+        <activity android:name=".weatherwebview" />
+        <activity android:name=".dashboard" />
     </application>
 
 </manifest>

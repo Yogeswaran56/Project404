@@ -24,6 +24,7 @@
         android:id="@+id/prod"
         android:background="@drawable/button"
         android:text="PRODUCT"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,4 +33,14 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:text="ANNOUNCEMENT"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/orders"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:text="MY ORDERS"/>
+
 </LinearLayout>

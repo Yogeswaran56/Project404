@@ -12,5 +12,7 @@
     <!-- 2nd Gradient color -->
     <color name="colorAmber_A400">#fefffe</color>
     <color name="colorAmber_900">#05a311</color>
+    <color name="red">#F00808</color>
+    <color name="green">#528D00</color>
     <!-- ./ 2nd Gradient color -->
 </resources>

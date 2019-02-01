@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class custo_home_page extends AppCompatActivity implements  View.OnClickListener{
     private Button prod;
-    private Button announce, button_logout;
+    private Button announce, button_logout, myorders;
 
     private FirebaseAuth firebaseAuth;
     @Override
@@ -22,6 +22,7 @@ public class custo_home_page extends AppCompatActivity implements  View.OnClickL
             prod = (Button) findViewById(R.id.prod);
             announce = (Button) findViewById(R.id.announce);
             button_logout = findViewById(R.id.btn_logout_customer);
+            myorders = (Button) findViewById(R.id.orders);
             firebaseAuth = FirebaseAuth.getInstance();
 
             button_logout.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +46,8 @@ public class custo_home_page extends AppCompatActivity implements  View.OnClickL
                         Intent i = new Intent(custo_home_page.this, homelist.class);
                         startActivity(i);
                     }
-                    catch(Exception e){
+                    catch(Exception e){                    startActivity(i);
+
                         Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -55,9 +57,18 @@ public class custo_home_page extends AppCompatActivity implements  View.OnClickL
                 public void onClick(View v) {
 
                     Intent i = new Intent(custo_home_page.this, custom_announcementList.class);
+                }
+            });
+
+            myorders.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent i = new Intent(custo_home_page.this, OrderListView.class);
                     startActivity(i);
                 }
             });
+
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
